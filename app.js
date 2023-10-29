@@ -15,11 +15,7 @@ const bookmarkRouter = require("./routes/bookmarkRouter");
 const error = require("./middlewares/error");
 
 // allows request from the client side to go through
-app.use(
-  cors({
-    origin: [process.env.CLIENT_URL, "http://localhost:5174"],
-  })
-);
+app.use(cors());
 //allows access to the req.body on all requests(req.body would be undefined without this)
 app.use(express.json());
 app.use("/api/auth", authRouter);
